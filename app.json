@@ -1,0 +1,12 @@
+{
+  "name": "crud",
+  "displayName": "crud",
+  "expo": {
+    "name": "crud",
+    "slug": "crud",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
