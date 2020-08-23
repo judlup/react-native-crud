@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native';
 
 class Note extends Component {
   render() {
@@ -7,6 +7,9 @@ class Note extends Component {
       <View key={this.props.keyval} style={styles.note}>
         <Text style={styles.noteText}> {this.props.val.date} </Text>
         <Text style={styles.noteText}> {this.props.val.note} </Text>
+
+        <TextInput value={this.props.val.note} onChangeText={this.props.updateMethod}>
+        </TextInput>
 
         <TouchableOpacity onPress={this.props.deleteMethod} style={styles.noteDelete}>
           <Text style={styles.noteDeleteText}>D</Text>

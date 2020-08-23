@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, ScrollView, TouchableOpacity, Alert } from 'react-native';
 
 import Note from './Note';
 
@@ -18,7 +18,7 @@ export default class Main extends React.Component {
   render(){
 
     let notes = this.state.noteArray.map((val,key) => {
-        return <Note key={key} keyval={key} val={val} deleteMethod={ () => this.deleteNote(key)} />
+        return <Note key={key} keyval={key} val={val} deleteMethod={ () => this.deleteNote(key)} updateMethod={ this.updateNote.bind(this,key) } />
     })
 
     return(
@@ -63,6 +63,11 @@ export default class Main extends React.Component {
       this.setState({ noteArray: this.state.noteArray });
       this.setState({ noteText: '' })
     }
+  }
+
+  updateNote(key,val){    
+    this.state.noteArray[key]['note'] = val;
+    this.setState({noteArray:this.state.noteArray})
   }
 
   deleteNote(key){
