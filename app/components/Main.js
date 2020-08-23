@@ -25,7 +25,7 @@ export default class Main extends React.Component {
       <View style={styles.container}>
         
         <View style={styles.header}>
-          <Text style={styles.headerText}> NOTER</Text>
+          <Text style={styles.headerText}> NOTES</Text>
         </View>
 
         <ScrollView style={styles.scrollContainer}>
@@ -37,7 +37,7 @@ export default class Main extends React.Component {
             style={styles.textInput}
             onChangeText={(noteText) => this.setState({noteText})}
             value={this.state.noteText}
-            placeholder="Note"
+            placeholder="> Note"
             placeholderTextColor="white"
             underlineColorAndroid="transparent">
           </TextInput>
